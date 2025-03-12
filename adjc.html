@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADJC Kyrkan</title>
+    <link rel="stylesheet" href="adjc.css">
+</head>
+<body>
+    <header>
+        <!-- Språkväljare -->
+        <div class="language-selector">
+            <button class="language-button" data-lang="sv" onclick="changeLanguage('sv')">
+                <img src="https://flagcdn.com/w40/se.png" alt="Svenska"> Svenska
+            </button>
+            <button class="language-button" data-lang="en" onclick="changeLanguage('en')">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English"> English
+            </button>
+            <button class="language-button" data-lang="fr" onclick="changeLanguage('fr')">
+                <img src="https://flagcdn.com/w40/fr.png" alt="Français"> Français
+            </button>
+        </div>
+
+        <!-- Navigeringsbar -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#home" onclick="navigateToSection('home')" id="home-link">Hem</a></li>
+                <li><a href="#about" onclick="navigateToSection('about')" id="about-link">Om oss</a></li>
+                <li><a href="#services" onclick="navigateToSection('services')" id="services-link">Gudstjänster</a></li>
+                <li><a href="#events" onclick="navigateToSection('events')" id="events-link">Evenemang</a></li>
+                <li><a href="#contact" onclick="navigateToSection('contact')" id="contact-link">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <!-- Hem-sektion -->
+        <section id="home">
+            <h2>Välkommen</h2>
+            <p>Vi är en gemenskap som sprider hopp och tro.</p>
+            <p>Välkommen att delta i våra gudstjänster och evenemang.</p>
+        </section>
+
+        <!-- Om oss-sektion -->
+        <section id="about" style="display: none;">
+            <h2>Om oss</h2>
+            <p>ADJC Kyrkan är en plats där alla är välkomna.</p>
+            <p>Vi strävar efter att sprida hopp och kärlek.</p>
+        </section>
+
+        <!-- Gudstjänster-sektion -->
+        <section id="services" style="display: none;">
+            <h2>Gudstjänster</h2>
+            <p>Söndagar kl 11:00 - 14:00 – Huvudgudstjänst</p>
+            <p>Onsdagar kl 18:00 - 20:00 – Bönemöte</p>
+            <p>Fredagar kl 18:00 - 20:00 – Bibelundervisning</p>
+        </section>
+
+        <!-- Evenemang-sektion -->
+        <section id="events" style="display: none;">
+            <h2>Evenemang</h2>
+            <p>Vi arrangerar julkonserter, välgörenhetsauktioner och andra evenemang.</p>
+        </section>
+
+        <!-- Kontakt-sektion -->
+        <section id="contact" style="display: none;">
+            <h2>Kontakt</h2>
+            <p>Adress: Kyrkgatan 10, 12345 Staden</p>
+            <p>Telefon: 012-345678</p>
+            <p>E-post: <a href="mailto:info@adjckyrkan.se">info@adjckyrkan.se</a></p>
+
+            <!-- Kontaktformulär -->
+            <form id="contact-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Namn:</label>
+                    <input type="text" id="name" name="name" placeholder="Ditt namn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-post:</label>
+                    <input type="email" id="email" name="email" placeholder="Din e-postadress" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Meddelande:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Ditt meddelande" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Skicka</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 ADJC Kyrkan - Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const translations = {
+            sv: {
+                menu: ["Hem", "Om oss", "Gudstjänster", "Evenemang", "Kontakt"],
+                home: { title: "Välkommen", text: ["Vi är en gemenskap som sprider hopp och tro.", "Välkommen att delta i våra gudstjänster och evenemang."] },
+                about: { title: "Om oss", text: ["ADJC Kyrkan är en plats där alla är välkomna.", "Vi strävar efter att sprida hopp och kärlek."] },
+                services: { title: "Gudstjänster", text: ["Söndagar kl 11:00 - 14:00 – Huvudgudstjänst.", "Onsdagar kl 18:00 - 20:00 – Bönemöte.", "Fredagar kl 18:00 - 20:00 – Bibelundervisning."] },
+                events: { title: "Evenemang", text: ["Vi arrangerar julkonserter, välgörenhetsauktioner och fler aktiviteter."] },
+                contact: { 
+                    title: "Kontakt", 
+                    text: ["Adress: Kyrkgatan 10, 12345 Staden.", "Telefon: 012-345678.", "E-post: info@adjckyrkan.se."],
+                    form: {
+                        name: "Namn",
+                        email: "E-post",
+                        message: "Meddelande",
+                        placeholders: {
+                            name: "Ditt namn",
+                            email: "Din e-postadress",
+                            message: "Ditt meddelande"
+                        },
+                        submit: "Skicka"
+                    }
+                }
+            },
+            en: {
+                menu: ["Home", "About Us", "Services", "Events", "Contact"],
+                home: { title: "Welcome", text: ["We are a community spreading hope and faith.", "Join us for our services and events."] },
+                about: { title: "About Us", text: ["ADJC Church is a place where everyone is welcome.", "We aim to spread hope and love."] },
+                services: { title: "Services", text: ["Sundays 11:00 - 14:00 – Main Service.", "Wednesdays 18:00 - 20:00 – Prayer Meeting.", "Fridays 18:00 - 20:00 – Bible Study."] },
+                events: { title: "Events", text: ["We organize Christmas concerts, charity auctions, and other activities."] },
+                contact: { 
+                    title: "Contact", 
+                    text: ["Address: Kyrkgatan 10, 12345 Staden.", "Phone: 012-345678.", "Email: info@adjckyrkan.se."],
+                    form: {
+                        name: "Name",
+                        email: "Email",
+                        message: "Message",
+                        placeholders: {
+                            name: "Your name",
+                            email: "Your email address",
+                            message: "Your message"
+                        },
+                        submit: "Send"
+                    }
+                }
+            },
+            fr: {
+                menu: ["Accueil", "À propos", "Services", "Événements", "Contact"],
+                home: { title: "Bienvenue", text: ["Nous sommes une communauté qui partage espoir et foi.", "Rejoignez-nous pour nos services et événements."] },
+                about: { title: "À propos", text: ["L'église ADJC est un endroit où tout le monde est le bienvenu.", "Nous visons à répandre l'espoir et l'amour."] },
+                services: { title: "Services", text: ["Dimanches 11:00 - 14:00 – Service principal.", "Mercredis 18:00 - 20:00 – Réunion de prière.", "Vendredis 18:00 - 20:00 – Étude biblique."] },
+                events: { title: "Événements", text: ["Nous organisons des concerts de Noël, des ventes aux enchères caritatives et d'autres activités."] },
+                contact: { 
+                    title: "Contact", 
+                    text: ["Adresse: Kyrkgatan 10, 12345 Staden.", "Téléphone: 012-345678.", "Email: info@adjckyrkan.se."],
+                    form: {
+                        name: "Nom",
+                        email: "Email",
+                        message: "Message",
+                        placeholders: {
+                            name: "Votre nom",
+                            email: "Votre adresse email",
+                            message: "Votre message"
+                        },
+                        submit: "Envoyer"
+                    }
+                }
+            }
+        };
+
+        let currentLanguage = "sv";
+
+        function changeLanguage(language) {
+            currentLanguage = language;
+
+            // Uppdatera menytexten
+            const menuItems = document.querySelectorAll(".nav-links li a");
+            const menuTranslations = translations[currentLanguage].menu;
+            menuItems.forEach((item, index) => {
+                item.textContent = menuTranslations[index];
+            });
+
+            // Markera aktiv språkknapp
+            document.querySelectorAll(".language-selector button").forEach((btn) => {
+                btn.classList.remove("active");
+            });
+            document.querySelector(`button[data-lang="${language}"]`).classList.add("active");
+
+            // Uppdatera innehållet
+            updateContent();
+        }
+
+        function navigateToSection(sectionId) {
+            document.querySelectorAll("main section").forEach((section) => {
+                section.style.display = "none";
+            });
+            document.getElementById(sectionId).style.display = "block";
+            updateContent();
+        }
+
+        function updateContent() {
+            const visibleSection = document.querySelector("main section:not([style*='display: none'])");
+            if (!visibleSection) return;
+
+            const sectionId = visibleSection.id;
+            const translation = translations[currentLanguage][sectionId];
+
+            // Uppdatera rubrik
+            visibleSection.querySelector("h2").textContent = translation.title;
+
+            // Uppdatera text
+            const paragraphs = visibleSection.querySelectorAll("p");
+            const textParts = translation.text;
+            paragraphs.forEach((p, index) => {
+                p.textContent = textParts[index] || '';
+            });
+
+            // Uppdatera formulär (om det finns)
+            if (sectionId === "contact") {
+                const formTranslation = translation.form;
+                document.querySelector("label[for='name']").textContent = formTranslation.name;
+                document.querySelector("label[for='email']").textContent = formTranslation.email;
+                document.querySelector("label[for='message']").textContent = formTranslation.message;
+                document.getElementById("name").placeholder = formTranslation.placeholders.name;
+                document.getElementById("email").placeholder = formTranslation.placeholders.email;
+                document.getElementById("message").placeholder = formTranslation.placeholders.message;
+                document.querySelector(".submit-button").textContent = formTranslation.submit;
+            }
+        }
+
+        // Kontaktformulär insändning
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Tack för ditt meddelande! Vi återkommer snart.");
+        });
+
+        // Initiera sidan
+        navigateToSection("home");
+    </script>
+</body>
+</html>
