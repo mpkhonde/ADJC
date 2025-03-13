@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('adjc.jpg'); /* Använd rätt sökväg till bilden */
+    background-image: url(images/adjc.jpg); /* Använd rätt sökväg till bilden */
     background-size: cover; /* Gör så att bilden täcker hela skärmen */
     background-position: center; /* Centrerar bilden */
     background-repeat: no-repeat; /* Förhindrar upprepning */
