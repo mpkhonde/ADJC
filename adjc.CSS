@@ -188,8 +188,8 @@ footer {
     background: #0044cc;  /* Blå färg */
     color: white;
     text-align: center;
-    padding: 20px 0;
-    font-size: 16px;
+    padding: 5px 0;
+    font-size: 14px;
     font-weight: bold;
     width: 100%;
     position: relative;
@@ -200,12 +200,12 @@ footer {
 
 /* Copyright-text */
 footer .copyright {
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: 100px;
+    opacity: 0.10;
 }
 
 footer .copyright:hover {
-    opacity: 1;
+    opacity: 20;
     transition: opacity 0.3s ease;
 }
 
