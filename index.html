@@ -50,7 +50,7 @@
         </section>
 
         <!-- Gudstjänster-sektion -->
-        <section id="services" style="display: none;">
+        <section id="services" style="display: none;" >
             <h2>Gudstjänster</h2>
             <p>Söndagar kl 11:00 - 14:00 – Huvudgudstjänst</p>
             <p>Onsdagar kl 18:00 - 20:00 – Bönemöte</p>
@@ -105,7 +105,7 @@
                 menu: ["Hem", "Om oss", "Gudstjänster", "Evenemang", "Kontakt"],
                 home: { title: "Välkommen", text: ["Vi är en gemenskap som sprider hopp och tro.", "Välkommen att delta i våra gudstjänster och evenemang."] },
                 about: { title: "Om oss", text: ["ADJC Kyrkan är en plats där alla är välkomna.", "Vi strävar efter att sprida hopp och kärlek."] },
-                services: { title: "Gudstjänster", text: ["Söndagar kl 11:00 - 14:00 – Huvudgudstjänst.", "Onsdagar kl 18:00 - 20:00 – Bönemöte.", "Fredagar kl 18:00 - 20:00 – Bibelundervisning."] },
+                services: { title: "Gudstjänster", text: ["Söndagar kl 11:00 - 14:00 – Huvudgudstjänst.", "Onsdagar kl 18:00 - 20:00 – Bönemöte.", "Fredagar kl 18:00 - 20:00 – Bibelundervisning.", "Lördagar kl 22:30 - 23:15 – Bön online."] },
                 events: { title: "Evenemang", text: ["Vi arrangerar julkonserter, välgörenhetsauktioner och fler aktiviteter."] },
                 contact: { 
                     title: "Kontakt", 
@@ -123,51 +123,123 @@
                     }
                 }
             },
+
             en: {
-                menu: ["Home", "About Us", "Services", "Events", "Contact"],
-                home: { title: "Welcome", text: ["We are a community spreading hope and faith.", "Join us for our services and events."] },
-                about: { title: "About Us", text: ["ADJC Church is a place where everyone is welcome.", "We aim to spread hope and love."] },
-                services: { title: "Services", text: ["Sundays 11:00 - 14:00 – Main Service.", "Wednesdays 18:00 - 20:00 – Prayer Meeting.", "Fridays 18:00 - 20:00 – Bible Study."] },
-                events: { title: "Events", text: ["We organize Christmas concerts, charity auctions, and other activities."] },
-                contact: { 
-                    title: "Contact", 
-                    text: ["Address: Kyrkgatan 10, 12345 Staden.", "Phone: 012-345678.", "Email: info@adjckyrkan.se."],
-                    form: {
-                        name: "Name",
-                        email: "Email",
-                        message: "Message",
-                        placeholders: {
-                            name: "Your name",
-                            email: "Your email address",
-                            message: "Your message"
-                        },
-                        submit: "Send"
-                    }
-                }
+              
+    menu: ["Home", "About Us", "Services", "Events", "Contact"],
+
+    home: { 
+        title: "Welcome", 
+        text: [
+            "We are a community spreading hope and faith.", 
+            "Join us for our services and events."
+        ] 
+    },
+
+    about: { 
+        title: "About Us", 
+        text: [
+            "ADJC Church is a place where everyone is welcome.", 
+            "We aim to spread hope and love."
+        ] 
+    },
+
+    services: {  
+        title: "Services", 
+        text: [  
+            "Sundays 11:00 AM - 2:00 PM – Main Service.",
+            "Wednesdays 6:00 PM - 8:00 PM – Prayer Meeting.",
+            "Fridays 6:00 PM - 8:00 PM – Bible Study.",  
+            "Saturdays 10:30 PM - 11:15 PM – Online Prayer."  
+        ] 
+    },
+
+    events: { 
+        title: "Events", 
+        text: [
+            "We organize Christmas concerts, charity auctions, and other activities."
+        ] 
+    },
+
+    contact: { 
+        title: "Contact", 
+        text: [
+            "Address: Kyrkgatan 10, 12345 Staden.", 
+            "Phone: 012-345678.", 
+            "Email: info@adjckyrkan.se."
+        ],
+        form: {
+            name: "Name",
+            email: "Email",
+            message: "Message",
+            placeholders: {
+                name: "Your name",
+                email: "Your email address",
+                message: "Your message"
             },
-            fr: {
-                menu: ["Accueil", "À propos", "Services", "Événements", "Contact"],
-                home: { title: "Bienvenue", text: ["Nous sommes une communauté qui partage espoir et foi.", "Rejoignez-nous pour nos services et événements."] },
-                about: { title: "À propos", text: ["L'église ADJC est un endroit où tout le monde est le bienvenu.", "Nous visons à répandre l'espoir et l'amour."] },
-                services: { title: "Services", text: ["Dimanches 11:00 - 14:00 – Service principal.", "Mercredis 18:00 - 20:00 – Réunion de prière.", "Vendredis 18:00 - 20:00 – Étude biblique."] },
-                events: { title: "Événements", text: ["Nous organisons des concerts de Noël, des ventes aux enchères caritatives et d'autres activités."] },
-                contact: { 
-                    title: "Contact", 
-                    text: ["Adresse: Kyrkgatan 10, 12345 Staden.", "Téléphone: 012-345678.", "Email: info@adjckyrkan.se."],
-                    form: {
-                        name: "Nom",
-                        email: "Email",
-                        message: "Message",
-                        placeholders: {
-                            name: "Votre nom",
-                            email: "Votre adresse email",
-                            message: "Votre message"
-                        },
-                        submit: "Envoyer"
-                    }
-                }
-            }
-        };
+            submit: "Send"
+        }
+    }
+},
+
+  fr: {
+    menu: ["Accueil", "À propos", "Services", "Événements", "Contact"],
+
+    home: { 
+      title: "Bienvenue", 
+      text: [
+        "Nous sommes une communauté qui partage espoir et foi.", 
+        "Rejoignez-nous pour nos services et événements."
+      ] 
+    },
+
+    about: { 
+      title: "À propos", 
+      text: [
+        "L'église ADJC est un endroit où tout le monde est le bienvenu.", 
+        "Nous visons à répandre l'espoir et l'amour."
+      ] 
+    },
+
+    services: {  
+      title: "Services", 
+      text: [  
+        "Dimanches 11:00 - 14:00 – Service principal.",
+        "Mercredis 18:00 - 20:00 – Réunion de prière.",
+        "Vendredis 18:00 - 20:00 – Étude biblique.",  
+        "Samedis 22h30 - 23h15 – Prière en ligne."  
+      ] 
+    },
+
+    events: { 
+      title: "Événements", 
+      text: [
+        "Nous organisons des concerts de Noël, des ventes aux enchères caritatives et d'autres activités."
+      ] 
+    },
+
+    contact: { 
+      title: "Contact", 
+      text: [
+        "Adresse: Kyrkgatan 10, 12345 Staden.", 
+        "Téléphone: 012-345678.", 
+        "Email: info@adjckyrkan.se."
+      ],
+      form: {
+        name: "Nom",
+        email: "Email",
+        message: "Message",
+        placeholders: {
+          name: "Votre nom",
+          email: "Votre adresse email",
+          message: "Votre message"
+        },
+        submit: "Envoyer"
+      }
+    }
+  }
+};
+
 
         let currentLanguage = "sv";
 
@@ -191,13 +263,18 @@
             updateContent();
         }
 
+        
         function navigateToSection(sectionId) {
             document.querySelectorAll("main section").forEach((section) => {
+                console.log(section)
                 section.style.display = "none";
             });
             document.getElementById(sectionId).style.display = "block";
             updateContent();
+            console.log(document.getElementById(sectionId))
+
         }
+            
 
         function updateContent() {
             const visibleSection = document.querySelector("main section:not([style*='display: none'])");
@@ -212,9 +289,14 @@
             // Uppdatera text
             const paragraphs = visibleSection.querySelectorAll("p");
             const textParts = translation.text;
-            paragraphs.forEach((p, index) => {
-                p.textContent = textParts[index] || '';
+            
+            // This code removes the fourth <p>, for unknown reasons
+            
+                paragraphs.forEach((p, index) => {
+                    console.log(`Index: ${index}, Text: ${textParts[index] || "MISSING TEXT"}`);
+                     p.textContent = textParts[index] || "Standardtext";
             });
+
 
             // Uppdatera formulär (om det finns)
             if (sectionId === "contact") {
