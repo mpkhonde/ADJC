@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADJC Kyrkan</title>
+    <link rel="stylesheet" href="/html/adjc.css"> <!-- Fixad sökväg till CSS -->
+</head>
+<body>
+    <header>
+        <!-- Språkväljare -->
+        <div class="language-selector">
+            <button class="language-button" data-lang="sv" onclick="changeLanguage('sv')">
+                <img src="https://flagcdn.com/w40/se.png" alt="Svenska"> Svenska
+            </button>
+            <button class="language-button" data-lang="en" onclick="changeLanguage('en')">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English"> English
+            </button>
+            <button class="language-button" data-lang="fr" onclick="changeLanguage('fr')">
+                <img src="https://flagcdn.com/w40/fr.png" alt="Français"> Français
+            </button>
+        </div>
+
+        <!-- Navigeringsbar -->
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#" onclick="navigateToSection('home', event)">Hem</a></li>
+                <li><a href="#" onclick="navigateToSection('about', event)">Om oss</a></li>
+                <li><a href="#" onclick="navigateToSection('services', event)">Gudstjänster</a></li>
+                <li><a href="#" onclick="navigateToSection('events', event)">Evenemang</a></li>
+                <li><a href="#" onclick="navigateToSection('contact', event)">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="home">
+                <h2>Välkommen</h2>
+                <p>Vi är en gemenskap som sprider hopp och tro.</p>
+            </section>
+
+            <section id="about" style="display: none;">
+                <h2>Om oss</h2>
+                <p>ADJC Kyrkan är en plats där alla är välkomna.</p>
+            </section>
+
+            <section id="services" style="display: none;">
+                <h2>Gudstjänster</h2>
+                <p>Söndagar kl 11:00 - 14:00 – Huvudgudstjänst</p>
+                <p>Lördagar kl 22:30 - 23:15 – Online bön</p>
+                <p>Onsdagar kl 18:00 - 20:00 – Huvudgudstjänst</p>
+                <p>Fredagar kl 18:00 - 20:00 – Bibelundervisning</p>
+            </section>
+
+            <section id="events" style="display: none;">
+                <h2>Evenemang</h2>
+                <p>Vi arrangerar julkonserter och välgörenhetsauktioner.</p>
+            </section>
+
+            <section id="contact" style="display: none;">
+                <h2>Kontakt</h2>
+                <p id="contact-address">Här kan du kontakta oss.</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Namn:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-post:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Meddelande:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Skicka</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2024 ADJC Kyrkan - Alla rättigheter förbehållna.</p>
+    </footer>
+
+    <!-- JavaScript-filer (defer för att säkerställa att de laddas efter HTML) -->
+    <script src="../js/translations.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

@@ -3,13 +3,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(images/adjc.jpg); /* Använd rätt sökväg till bilden */
-    background-size: cover; /* Gör så att bilden täcker hela skärmen */
-    background-position: center; /* Centrerar bilden */
-    background-repeat: no-repeat; /* Förhindrar upprepning */
-    background-attachment: fixed; /* Fixar bilden så att den inte rör sig */
+    background-image: url("../images/adjc.jpg"); /* Fixad sökväg */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -23,7 +26,8 @@ header {
     color: white;
     padding: 15px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
     display: flex;
@@ -100,15 +104,13 @@ header {
 /* === Main Innehåll === */
 main {
     max-width: 900px;
-    margin: 30px auto;
+    margin: 100px auto 30px; /* Lägger till utrymme under headern */
     padding: 20px;
-    background: none;  /* Tar bort vit bakgrund */
-    border-radius: 0;  /* Tar bort rundade hörn */
-    box-shadow: none;  /* Tar bort skuggan */
+    background: none;
     text-align: center;
-    color: #000; /* Säkerställer att texten är svart */
+    color: #000;
+    flex: 1; /* Gör att innehållet fyller ut sidan */
 }
-
 
 main section {
     margin-bottom: 20px;
@@ -126,7 +128,20 @@ main p {
     line-height: 1.5;
 }
 
-/* === Kontaktformulär === */
+/* === Kontaktsektion === */
+#contact {
+    margin-top: 50px; /* Lägger till avstånd från andra sektioner */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Kontaktformulär */
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -171,24 +186,12 @@ form {
     background-color: #003399;
 }
 
-/* === Gör footern fast längst ner === */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1; /* Gör att sidan fyller ut hela skärmen */
-}
-
+/* === Footer === */
 footer {
-    background: #0044cc;  /* Blå färg */
+    background: #0044cc;
     color: white;
     text-align: center;
-    padding: 5px 0;
+    padding: 10px 0;
     font-size: 14px;
     font-weight: bold;
     width: 100%;
@@ -205,16 +208,15 @@ footer .copyright {
 }
 
 footer .copyright:hover {
-    opacity: 20;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
-
 
 /* === Responsiv Design === */
 @media (max-width: 768px) {
     body {
         background-size: cover;
-        background-attachment: scroll; /* Förhindrar problem på mobiler */
+        background-attachment: scroll;
     }
 
     header {
@@ -241,68 +243,19 @@ footer .copyright:hover {
     form {
         width: 100%;
     }
+
+    #contact {
+        max-width: 90%;
+        padding: 15px;
+    }
 }
 
-/* === Kontaktsektion === */
-.contact-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Lätt genomskinlig vit bakgrund */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lätt skugga */
-    text-align: center;
-}
-
-.contact-container h2 {
-    color: #0044cc;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-/* Formulärstil */
-.form-group {
-    text-align: left;
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Gör inputfälten snyggare */
+/* === Gör inputfälten snyggare === */
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #0044cc;
     outline: none;
     box-shadow: 0 0 5px rgba(0, 68, 204, 0.5);
-}
-
-/* Skicka-knappen */
-.submit-button {
-    background-color: #0044cc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: #003399;
 }
 
 /* === Anpassning för mindre skärmar === */
@@ -312,4 +265,54 @@ footer .copyright:hover {
         padding: 15px;
     }
 }
+
+.language-button {
+    background: none;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.language-button.active {
+    border: 2px solid white;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Flytta "Kontakt"-knappen i menyn lite mer till vänster */
+.nav-links li:last-child {
+    margin-right: 40px; /* Justera detta värde för att flytta den mer */
+}
+
+
+/* === Se till att footern alltid ligger längst ner === */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Gör att innehållet tar upp all tillgänglig plats */
+    padding-bottom: 50px; /* Ger extra utrymme innan footern */
+}
+
+/* === Footer alltid längst ner === */
+footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #0033a0; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    font-size: 14px;
+}
+
+
 
