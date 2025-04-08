@@ -1,0 +1,440 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* === Bakgrundsbild (hela sidan) === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/adjc.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(0.6);
+}
+
+/* === Länkstil === */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* === Header === */
+header {
+  background-color: #0044cc;
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.language-selector {
+  margin-right: auto;
+  display: flex;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li button {
+  background: white;
+  color: #0044cc;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links li button:hover {
+  background-color: #e6e6e6;
+}
+
+.nav-links li button.active {
+  background-color: #002266;
+  color: white;
+}
+
+/* === Welcome Sektion === */
+#welcome {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px 0;
+}
+
+#welcome h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px #000;
+  margin-bottom: 1rem;
+}
+
+#welcome p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* === Main Innehåll === */
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 120px 20px 160px;
+  background: transparent;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  min-height: 100vh;
+}
+
+main section {
+  margin: 0 auto 60px;
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 800px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+main h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+main p {
+  font-size: 16px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+main section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 500px;
+}
+
+main section ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+main section ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+  font-weight: bold;
+}
+
+/* === Kontaktsektion === */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 120px 20px 220px; /* ger luft ovan & under */
+  min-height: 100vh;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#contact {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-bottom: 60px;
+  backdrop-filter: blur(6px);
+}
+
+#contact h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+#contact p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+#contact form {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #666;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0044cc;
+  box-shadow: 0 0 5px rgba(0, 68, 204, 0.4);
+  outline: none;
+}
+
+.submit-button {
+  background-color: #0044cc;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #003399;
+}
+
+/* Extra utrymme under kartan */
+.map-section {
+  margin-top: 40px;
+}
+
+/* === Success-meddelande === */
+.success-message {
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 2px solid #00cc66;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: center;
+  color: #ccffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+/* === Footer === */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0033a0;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* === Språkval === */
+.language-menu {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+}
+
+.language-toggle {
+  background: #fff;
+  color: #0044cc;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.language-options {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 1100;
+}
+
+.language-options.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.language-options button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.language-options button:hover,
+.language-options button.active {
+  background-color: #0044cc;
+}
+
+/* === Hamburgermeny (mobil) === */
+.hamburger,
+.menu-toggle {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 28px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 5px 15px;
+  z-index: 1101;
+}
+
+.close-menu {
+  display: none;
+}
+
+/* === Mobilresponsivitet === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar.open {
+    display: flex;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 68, 204, 0.95);
+    padding: 20px 0;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links li button {
+    width: 200px;
+    font-size: 18px;
+  }
+
+  .close-menu {
+    display: block;
+    font-size: 26px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  .hamburger,
+  .menu-toggle {
+    display: block;
+  }
+
+  main {
+    width: 90%;
+    padding: 80px 10px 160px;
+  }
+
+  .contact-container {
+    padding: 100px 10px 120px;
+    flex-direction: column;
+  }
+
+  #contact {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  #welcome h1 {
+    font-size: 2rem;
+  }
+
+  #welcome p {
+    font-size: 1rem;
+  }
+}
